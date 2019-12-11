@@ -16,7 +16,7 @@ class Movie extends Component{
 class MoviePoster extends Component{
     render(){
         return(
-      <img  src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9949FE385C90D19228"/>
+      <img  src="http://mblogthumb3.phinf.naver.net/MjAxODA0MjVfOTEg/MDAxNTI0NjUwMDgwNjcx.DcrOx0X-FfRtHrogSVfjdQHIRnHYNSAz79Nc1l7LdWsg.QBjQSbwmXD055E5PFpH2vZB5xfvUQsU4Fv2-cBTsdzUg.JPEG.comeinto_/IMG_4375.jpg?type=w800"/>
         )
     }
 }

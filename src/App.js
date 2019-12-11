@@ -8,8 +8,6 @@ class App extends  Component {
     return (
       <div className="App">
     {/* 모든 영화 내용, 정보가 들어갈 곳 */}
-      
-      <Movie/>
       <Movie/>
       <Movie/>
       <Movie/>
