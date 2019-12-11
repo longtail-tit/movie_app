@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Movie from './Movie';
 
-class App extends Component {
+class App extends  Component {
   render() {
     return (
       <div className="App">
