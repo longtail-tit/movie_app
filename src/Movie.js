@@ -3,10 +3,13 @@ import './Movie.css'
 
 class Movie extends Component{
     render(){
+        // console.log(this.props);
         return(
             <div>
-            <MoviePoster/>
-            <h1>hello this is the movie</h1>
+            <MoviePoster poster={this.props.poster}/>
+        <h1>{this.props.title}</h1>
+        {/* 영화 제목들 출력. props는 요소들?요소의 title을 출력한다. */}
+        {/* JSX명령어를 실행시키려면 꼭 괄호를 쳐줘야한다. */}
             </div>
         )
     }
@@ -15,8 +18,9 @@ class Movie extends Component{
 
 class MoviePoster extends Component{
     render(){
+        console.log(this.props)
         return(
-      <img  src="http://mblogthumb3.phinf.naver.net/MjAxODA0MjVfOTEg/MDAxNTI0NjUwMDgwNjcx.DcrOx0X-FfRtHrogSVfjdQHIRnHYNSAz79Nc1l7LdWsg.QBjQSbwmXD055E5PFpH2vZB5xfvUQsU4Fv2-cBTsdzUg.JPEG.comeinto_/IMG_4375.jpg?type=w800"/>
+      <img  src={this.props.poster}/>
         )
     }
 }
