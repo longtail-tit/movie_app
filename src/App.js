@@ -25,25 +25,15 @@ const movies = [
     poster: "https://pbs.twimg.com/media/ED5kOUeWsAEGBDL.jpg"
   }
 ]
-class App extends  Component {
+class App extends Component {
   render() {
     return (
       <div className="App">
-{/* array의 map 기능
-movies는 array , 그 다음 map 기능을 통해서 새로운 array를 만듬 
-=> movies array를 가져다가 매핑을 해서 새로운 array를 만드는 것. 해당 movies array 안의 엘러먼트를 활용해서.
-현재 작업하고있는 movies array   를 활용한다는 것이 포인트이다. 
-*/}
-        {movies.map(movie => {
-          // 위의 movies array의 엘리먼트를 토대로한 컴포넌트
-          return <Movie title={movie.title} poster={movie.poster}/>
+        {movies.map( (movie , index) => { 
+          // **리액트는 엘리먼트가 많을 경우 key 를 줘야한다.  => 키는 유일해야한다. 
+          return <Movie title={movie.title} poster={movie.poster} key={index}/>
         })}
-        {/* {[
-          <Movie title={movies[0].title} poster={movies[0].poster} />
-          <Movie title={movies[1].title} poster={movies[1].poster} />
-          <Movie title={movies[2].title} poster={movies[2].poster} />
-          <Movie title={movies[3].title} poster={movies[3].poster} />
-        ]} */}
+      
       </div>
     )
 
@@ -51,3 +41,4 @@ movies는 array , 그 다음 map 기능을 통해서 새로운 array를 만듬
 }
 
 export default App
+
