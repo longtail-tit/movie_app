@@ -23,25 +23,30 @@ const movies = [
 ]
 
 
-
-// 컴포넌트 라이프사이클 : 컴포넌트는 여러 기능들을 정해진 순서대로 실행한다. 
-//실행 순서 
-//Render : componenetWillMount() -> render() -> componentDidMount()   <== 이 싸이클으 자동으로 발생한다
-//Update componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> component
-// 새로운 컴포넌트를 받는다 -> old 와 new 를 비교해서 다르면(=true)  -> 업데이트 할거임 -> render -> 업데이트 완료 
+// state? 컴포넌트의 Object
+// state가 바뀌면 다시 render 한다.
 class App extends Component {
 
-  componentWillMount(){
-    console.log('will mount')
+  state = { state는 컴포넌트를 로드하는 방법
+    greeting: 'Hello'
   }
-componentDidMount(){
-  console.log('did mount')
-}
+  // 컴포넌트가 mount되면 5초를 기다리고 greeting을 업데이트 
+  componentDidMount(){ 
+    setTimeout(()=> {
+      //this.state.greeting = 'somthing' //state를 직접적으로 변경하면 위의 render 설정들이 작동을 안한다.
+      this.setState({
+        //여기서 새로운 state를 만들어야한다. 
+        greeting: "Hello again"
+      })
+    },5000)
+  }
+
+
 
   render() {
-    console.log('render')
     return (
       <div className="App">
+        {this.state.greeting}
         {movies.map( (movie , index) => { 
           return <Movie title={movie.title} poster={movie.poster} key={index}/>
         })}
