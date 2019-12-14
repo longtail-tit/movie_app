@@ -33,7 +33,6 @@ class MoviePoster extends Component{
     }
 
     render(){
-        console.log(this.props)
         return(
       <img  src={this.props.poster}/>
         )
