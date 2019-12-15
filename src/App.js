@@ -10,39 +10,13 @@ import Movie from './Movie';
 
 class App extends Component {
 
-  state = { 
-
-  }
+  state={}
 
   componentDidMount(){ 
-    setTimeout(()=>{
-      this.setState({
-        movies : [
-          {
-            title: "Matrix",
-            poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0aMKrj8CQmPgSYhWfnV1tkaEIDuHu-mLNypNjEs8dgxNjst3h&s"
-          },
-          {
-            title: "Full Metal Jacket",
-            poster: "http://mblogthumb1.phinf.naver.net/MjAxOTAxMDNfMSAg/MDAxNTQ2NTIyNzIxMDQy.Mg-Unq0TcP20nuJt4jwQIII0qaJoxf9blEmWZryiL_Ig.Iya4LSd-MU81saiCOXhBAAaF87TMoWCTfO-pz_WjyI4g.JPEG.winpil99/full.jpg?type=w800"
-          },
-          {
-            title: "Oldboy",
-            poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPIxcRSI3uJNGwJIhZW-gyeAbQemnlnL3cdBl7M9F2zTmkpcrG&s"
-          },
-          {
-            title: "Star Wars",
-            poster: "https://pbs.twimg.com/media/ED5kOUeWsAEGBDL.jpg"
-          },
-          {
-            title:"Trainpotting",
-            poster: "https://mblogthumb-phinf.pstatic.net/MjAxODAxMDZfMjI3/MDAxNTE1MTgyMzk5OTIw.7BK0zUzbr5xIBPjISJ6eG8GgdSUYfiYnPDV1PaKfJkwg.HnP9ikM4L4B51qhMS017xY0nBH2oq9sYfL89Nargb9Eg.JPEG.jojosweetheart/1515182395263.jpg?type=w800"
-          }
-        ]
-      })
-    },5000)
-     // state로 infinit scroll 등 여러가지로 응용할 수 있다. 
+   fetch('https://yts.lt/api/v2/list_movies.json?sort_by=rating')
   }
+// component가 moount 되면 , 저 url을 가서 fetch 해오는거
+// AJAX? 새로고침 없이 작업, 리액트랑 작업이 간편하다.  
 
  _renderMoview = () => {  // <- 최신 자바스크립트.
     const movies = this.state.movies.map( (movie , index) => { 
