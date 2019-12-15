@@ -16,7 +16,14 @@ class App extends Component {
 
  _renderMoview = () => { 
   const movies = this.state.movies.map( movie  => {  // index 대신 movie.id 사용 => component에서 index 사용하면 느림 
-    return <Movie title={movie.title} poster={movie.large_cover_image} />
+    console.log(movie)
+    return <Movie 
+        title={movie.title_english} 
+        poster={movie.medium_cover_image} 
+        key={movie.id} 
+        genres={movie.genres}
+        synopsis={movie.synopsis}
+      />
    }) 
    return movies
   }
@@ -56,6 +63,8 @@ class App extends Component {
 // 5. call api 는 fetch promise를 return할 것인데, 이는 모든 데이터의 제이슨이다.
 // 6. json.data.movies 라는 value는 const movies의 결과값이 된다. 
 // 7. get movies 함수 안에서 this.setState를 movies로 설정 
+
+// async 안쓰면 await 작동 안한다 
 
 export default App
 
