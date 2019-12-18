@@ -1,4 +1,4 @@
-## React 활용해 영화 게시판 만들기
+## React - 영화 게시판 만들기
 
 - yts api 
 - VSCode
